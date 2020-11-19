@@ -30,12 +30,13 @@ for (let i = 0; i<btnPlus.length; i++){
 
           
           //add to cart
-        
+          let h=[]
           for (let i = 0; i<add.length; i++){
             add[i].addEventListener("click", addtocart)
              function addtocart(){
                if (quantite[i].value!=0){
 
+               
               
               const panier=document.querySelector('.pan')
               const list = document.createElement("div")
@@ -69,25 +70,25 @@ for (let i = 0; i<btnPlus.length; i++){
                line.appendChild(del)
                list.appendChild(line)
                panier.appendChild(list)
+               let r=i
               
-            
-           
+               h.push(r); 
+               console.log(h)
+             
            
           }else{
             alert("quantité manquante")
+            quantite[i].focus()
+
           }
                
                }  
              }  
+             document .querySelector("#btn-panier") .addEventListener("click", afficher);
+             function afficher() {
+                var x = document.querySelector(".prods");
+                var z = document.querySelector(".pan");
+                x.className="pan-show"
+                z.className="prods-hidden"
 
-
-
-             let btnAff=document.getElementById('btn-panier')
-             let b=document.getElementsByClassName('list')
-
-          btnAff.addEventListener("click",afficher)
-          function afficher(){
-list.style.display="block"
-          }
-
-
+             }
